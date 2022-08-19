@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>Objects and method in Javscript</header>
+
+    <section>
+        <script>
+
+            let employee = {
+                Emp_name: "Emp1",
+                Emp_addr: "address1",
+                Emp_age: 40,
+
+                Emp_info() {
+                    document.write(JSON.stringify(employee));
+                }
+            };
+
+            function Emp_details() {
+               employee.Emp_info();
+            }
+
+        </script>
+        <button onclick="Emp_details()">Employee Details</button>
+    </section>
+
+</body>
+
+</html>

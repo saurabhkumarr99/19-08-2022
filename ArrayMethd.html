@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let arr = new Array();
+        function showData() {
+            document.getElementById("container").innerHTML = arr;
+        }
+
+        function add() {
+            var x = document.getElementById("input1").value;
+            arr.push(x);
+            showData();
+        }
+
+        function del1() {
+            arr.pop();
+            showData();
+        }
+
+        function del2() {
+            var x = document.getElementById("input1").value;
+            var ind = arr.indexOf(x);
+            delete arr[ind];
+            showData();
+        }
+
+        function fun3() {
+            var x = document.getElementById("input3").value;
+            x = Number(x);
+            var y = document.getElementById("input4").value;
+            y = Number(y);
+            arr.splice(x, y);
+            showData();
+        }
+
+        function fun4() {
+            var x = document.getElementById("input5").value;
+            x = Number(x);
+            var y = document.getElementById("input6").value;
+            y = Number(y);
+            showData();
+            document.getElementById("container2").innerHTML = arr.slice(x, y);
+        }
+
+        function fun5() {
+            var count =0;
+            arr.forEach(function (item, index, array) {
+               count++;
+                document.getElementById("container3").innerHTML = count;
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        Array and its methhod in javascript
+    </header>
+
+    <section>
+
+        <div id="container"></div><br>
+        <div id="container2"></div><br>
+        Push Elements : <input type="text" id="input1" placeholder="Add Elements">
+        <button onclick="add()">Push</button><br>
+        Pop Element : <button onclick="del1()">Pop</button><br>
+        Delete Element : <input type="text" id="input2" placeholder="Deleta an Elements">
+        <button onclick="del2()">Delete</button><br>
+        Splice Element : <input type="text" id="input3" placeholder="Start index">
+        <input type="text" id="input4" placeholder="No. of elements">
+        <button onclick="fun3()">Splice</button><br>
+
+        Slice Element : <input type="text" id="input5" placeholder="Start index">
+        <input type="text" id="input6" placeholder="No. of elements">
+        <button onclick="fun4()">Splice</button><br>
+
+        iterate Element :<button onclick="fun5()">Iterate</button><br>
+        <div id="container3"></div>
+
+
+
+    </section>
+
+</body>
+
+</html>

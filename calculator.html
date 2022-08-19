@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let calculator = {
+
+            data() {
+                this.input1 = document.getElementById("first_input").value;
+                input1 = Number(input1);
+                this.input2 = document.getElementById("Second_input").value;
+                input2 = Number(input2);
+                alert(input1 + input2);
+            },
+
+            add() {
+                document.getElementById("result").innerHTML = this.result;
+                calculator.result();
+            },
+
+            substract() {
+                this.result = Number(input1) - Number(input2);
+                calculator.result();
+            },
+
+            divide() {
+                this.result = Number(input1) * Number(input2);
+                calculator.result();
+            },
+
+            multiply() {
+                this.result = Number(input1) / Number(input2);
+                calculator.result();
+            },
+
+            result() {
+                document.getElementById("result").innerHTML = this.result;
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Calculator Using Object</h1>
+    </header>
+    <section>
+        First Number : <input type="text" id="first_input"><br>
+        Second Number : <input type="text" id="Second_input"><br>
+        <button onclick="calculator.data()">Add</button>
+        <button onclick="calculator.substract()">Substarct</button>
+        <button onclick="calculator.multiply()">Multiply</button>
+        <button onclick="calculator.divide()">Divide</button>
+        <div id="result"></div>
+    </section>
+    <footer></footer>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let arr = new Array();
+        function showData() {
+            document.getElementById("container").innerHTML = arr;
+        }
+
+        function add() {
+            var x = document.getElementById("input1").value;
+            arr.push(x);
+            showData();
+        }
+
+        function fun2() {
+            arr.sort();
+            showData();
+        }
+
+        
+        function fun3() {
+            var count =0;
+            arr.forEach(function (item, index, array) {
+               count++;
+                document.getElementById("container3").innerHTML = count;
+            });
+        }
+
+        function fun4() {
+            var name = document.getElementById("input2").value;
+            var x = document.getElementById("input3").value;
+            document.getElementById("container2").innerHTML=name.split(x);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        Array and its methhod in javascript
+    </header>
+
+    <section>
+
+        <div id="container"></div><br>
+        
+        Push Elements : <input type="text" id="input1" placeholder="Add Elements">
+        <button onclick="add()">Push</button><br>
+       
+        Sort Elements :<button onclick="fun2()">Sort</button><br>
+
+        iterate Element :<button onclick="fun3()">Iterate</button><br>
+        <div id="container3"></div>
+
+        Sentence : <input type="text" id="input2" placeholder="Write a sentence">
+        <input type="text" id="input3" placeholder="Split from">
+        <button onclick="fun4()">Push</button><br>
+        <div id="container2"></div><br>
+
+
+    </section>
+
+</body>
+
+</html>
