@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let Employee_List = new Array();
+
+        function Employee_data() {
+            document.getElementById("container1").innerHTML = JSON.stringify(Employee_List);
+        }
+
+        function Add_Employee() {
+            let Emp = {
+                Employee_Name: document.getElementById("ename").value,
+                Employee_age: document.getElementById("age").value
+            }
+
+            if (Employee_List.push(Emp)) {
+                Employee_data();
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Array of Employee</h1>
+    </header>
+
+    <section>
+
+        <h2>Add Employee</h2><br>
+        Employee Name :<input type="text" id="ename"><br>
+        Employee Age:<input type="text" id="age">
+        <button onclick="Add_Employee()" style="height: 50px; width: 90px; background-color: aquamarine;">Add</button>
+        <hr>
+        <div id="container1"></div>
+    </section>
+
+</body>
+
+</html>
