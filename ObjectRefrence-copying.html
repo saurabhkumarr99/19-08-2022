@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Object Refrence and Copying Practical</h1>
+    </header>
+
+    <section>
+
+        <h2>Object Refrence Example-1</h2>
+        <script>
+            let user1 = { name: 'John' };
+
+            let admin1 = user;
+
+            document.write("User name :" + user.name + " ");
+            document.write("Admin name :" + admin.name);
+
+        </script>
+
+        <br>
+        <h2>Object Refrence Example-2</h2>
+        <script>
+            let user2 = { name: 'John' };
+
+            let admin2 = user2;
+            admin2.name = 'updated';
+
+            document.write("User name :" + user2.name + " ");
+            document.write("Admin name :" + admin2.name);
+
+        </script>
+
+        <br>
+        <h2>Object Assignment in another object Example-1</h2>
+        <script>
+            let user3 = { name: 'ABC', address: 'EFG' };
+
+            let admin3 = {};
+            for (let key in user3) {
+                admin3[key] = user3[key];
+            }
+
+            document.write("User  :" + JSON.stringify(user3) + " ");
+            document.write("Admin :" + JSON.stringify(admin3));
+
+            admin3.name = 'updated';
+
+            document.write("User  :" + JSON.stringify(user3) + " ");
+            document.write("Admin :" + JSON.stringify(admin3));
+
+
+        </script>
+
+
+    </section>
+
+</body>
+
+</html>
